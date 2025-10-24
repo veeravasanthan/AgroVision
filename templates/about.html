@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | AgroVision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span>AgroVision</span>
+            </a>
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}" class="active">How It Works</a>
+                <a href="{{ url_for('prediction_page') }}">Get Recommendation</a>
+            </div>
+            <button class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>How AgroVision Works</h2>
+                <p>Our AI-powered system analyzes multiple factors to provide the perfect crop recommendation</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Step 1: Input Your Parameters</h3>
+                        <p>Enter your soil nutrient levels (Nitrogen, Phosphorus, Potassium), temperature, humidity, pH level, and rainfall data. These parameters are crucial for determining the ideal crop for your specific land conditions.</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Soil composition analysis</li>
+                            <li><i class="fas fa-check"></i> Climate condition assessment</li>
+                            <li><i class="fas fa-check"></i> Environmental factor evaluation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Step 2: AI Analysis & Processing</h3>
+                        <p>Our advanced machine learning model processes your data, comparing it with thousands of successful crop patterns and agricultural datasets to find the perfect match for your specific conditions.</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Machine learning algorithms</li>
+                            <li><i class="fas fa-check"></i> Pattern recognition</li>
+                            <li><i class="fas fa-check"></i> Predictive analytics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Step 3: Get Detailed Recommendation</h3>
+                        <p>Receive your personalized crop recommendation with comprehensive insights about why this crop is ideal for your conditions, along with detailed growing tips and cultivation guidelines.</p>
+                        <ul class="step-features">
+                            <li><i class="fas fa-check"></i> Personalized crop suggestion</li>
+                            <li><i class="fas fa-check"></i> Detailed growing insights</li>
+                            <li><i class="fas fa-check"></i> Cultivation best practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parameters Section -->
+            <div class="parameters-section">
+                <h3>Key Parameters We Analyze</h3>
+                <div class="parameters-grid">
+                    <div class="parameter-card">
+                        <div class="parameter-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Nitrogen (N)</h4>
+                        <p>Essential for chlorophyll production and leaf growth. Affects protein content and overall plant vigor.</p>
+                        <div class="parameter-range">Optimal: 50-200 ppm</div>
+                    </div>
+                    <div class="parameter-card">
+                        <div class="parameter-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Phosphorus (P)</h4>
+                        <p>Critical for root development, energy transfer, flowering, and seed production.</p>
+                        <div class="parameter-range">Optimal: 30-100 ppm</div>
+                    </div>
+                    <div class="parameter-card">
+                        <div class="parameter-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Potassium (K)</h4>
+                        <p>Regulates water uptake, improves disease resistance, and enhances fruit quality.</p>
+                        <div class="parameter-range">Optimal: 100-200 ppm</div>
+                    </div>
+                    <div class="parameter-card">
+                        <div class="parameter-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h4>Temperature</h4>
+                        <p>Affects germination, growth rate, flowering, and overall crop development cycle.</p>
+                        <div class="parameter-range">Range: 10-40°C</div>
+                    </div>
+                    <div class="parameter-card">
+                        <div class="parameter-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4>Humidity</h4>
+                        <p>Influences transpiration rate, disease prevalence, and overall plant health.</p>
+                        <div class="parameter-range">Optimal: 40-80%</div>
+                    </div>
+                    <div class="parameter-card">
+                        <div class="parameter-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h4>pH Level</h4>
+                        <p>Determines nutrient availability in soil. Different crops thrive in different pH ranges.</p>
+                        <div class="parameter-range">Range: 5.0-8.0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Discover Your Perfect Crop?</h2>
+                    <p>Get your personalized recommendation in just a few minutes</p>
+                    <a href="{{ url_for('prediction_page') }}" class="btn btn-primary btn-large">
+                        <i class="fas fa-seedling"></i>
+                        Get Your Recommendation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="{{ url_for('home') }}" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <span>AgroVision</span>
+                    </a>
+                    <p>Transforming agriculture through AI-powered insights.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="{{ url_for('home') }}">Home</a>
+                    <a href="{{ url_for('about') }}">How It Works</a>
+                    <a href="{{ url_for('prediction_page') }}">Get Recommendation</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 AgroVision. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
