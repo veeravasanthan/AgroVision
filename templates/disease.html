@@ -41,7 +41,7 @@
                 <div class="form-group" style="border: 2px dashed var(--glass-border); padding: 3rem; border-radius: 20px; text-align: center; cursor: pointer; transition: var(--transition);" id="drop-zone">
                     <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
                     <p id="file-name">Click or drag image here</p>
-                    <input type="file" name="file" id="file-input" style="display: none;" accept="image/*" required>
+                    <input type="file" name="file" id="file-input" style="display: none;" accept="image/*">
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Analyze Plant</button>
             </form>
@@ -80,15 +80,31 @@
         const dropZone = document.getElementById('drop-zone');
         const fileInput = document.getElementById('file-input');
         const fileName = document.getElementById('file-name');
+        const form = document.querySelector('form');
 
         if (dropZone) {
             dropZone.onclick = () => fileInput.click();
             fileInput.onchange = (e) => {
                 if (e.target.files.length > 0) {
-                    fileName.textContent = e.target.files[0].name;
+                    fileName.innerHTML = `<i class="fas fa-file-image"></i> ${e.target.files[0].name}`;
                     dropZone.style.borderColor = 'var(--primary-light)';
                     dropZone.style.background = 'rgba(76, 175, 80, 0.05)';
                 }
+            };
+        }
+
+        if (form) {
+            form.onsubmit = (e) => {
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    e.preventDefault();
+                    alert('Please select or drag an image first!');
+                    return false;
+                }
+                
+                // Show loading state
+                const btn = form.querySelector('button[type="submit"]');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+                btn.disabled = true;
             };
         }
     </script>

@@ -575,18 +575,28 @@ def disease_predict():
     if file.filename == '':
         return render_template('disease.html', error='No file selected')
     
-    if file:
-        # In a real app, we'd save the file and run it through a model
-        # For now, we'll simulate the prediction
-        temp_path = os.path.join('static', 'uploads', file.filename)
-        os.makedirs(os.path.dirname(temp_path), exist_ok=True)
+    try:
+        # Save temp file for prediction
+        temp_dir = os.path.join('static', 'uploads')
+        os.makedirs(temp_dir, exist_ok=True)
+        temp_path = os.path.join(temp_dir, file.filename)
         file.save(temp_path)
         
+        # Predict
         disease_name = disease_model.predict(temp_path)
-        disease_data = DISEASE_INFO.get(disease_name)
+        
+        # Get info and create a COPY to avoid mutating global DISEASE_INFO
+        raw_info = DISEASE_INFO.get(disease_name)
+        if not raw_info:
+            return render_template('disease.html', error=f'Diagnosis failed for {disease_name}')
+            
+        disease_data = raw_info.copy()
         disease_data['image_url'] = f'/static/uploads/{file.filename}'
         
         return render_template('disease.html', disease_data=disease_data)
+    except Exception as e:
+        print(f"❌ Disease prediction error: {e}")
+        return render_template('disease.html', error=f"Processing error: {str(e)}")
 
 if __name__ == '__main__':
        port = int(os.environ.get('PORT', 5000))
