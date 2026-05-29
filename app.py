@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 import os
+import base64
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-here')
 # Complete crop information database
@@ -576,11 +577,17 @@ def disease_predict():
         return render_template('disease.html', error='No file selected')
     
     try:
-        # Save temp file for prediction
-        temp_dir = os.path.join('static', 'uploads')
+        # Save temp file for prediction in /tmp (writeable on Vercel)
+        temp_dir = '/tmp'
         os.makedirs(temp_dir, exist_ok=True)
         temp_path = os.path.join(temp_dir, file.filename)
         file.save(temp_path)
+        
+        # Read file for base64 encoding to display in frontend
+        with open(temp_path, "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+            mime_type = file.content_type or 'image/jpeg'
+            base64_image = f"data:{mime_type};base64,{encoded_string}"
         
         # Predict
         disease_name = disease_model.predict(temp_path)
@@ -591,8 +598,12 @@ def disease_predict():
             return render_template('disease.html', error=f'Diagnosis failed for {disease_name}')
             
         disease_data = raw_info.copy()
-        disease_data['image_url'] = f'/static/uploads/{file.filename}'
+        disease_data['image_url'] = base64_image
         
+        # Clean up temp file
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+            
         return render_template('disease.html', disease_data=disease_data)
     except Exception as e:
         print(f"❌ Disease prediction error: {e}")
