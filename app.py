@@ -12,6 +12,7 @@ CROP_INFO = {
         'temperature': '20-35°C',
         'rainfall': '150-300 cm',
         'ph': '5.0-7.5',
+        'fertilizer': 'Urea, DAP, MOP (Ratio 4:2:1)',
         'insights': [
             'Requires standing water during growth period',
             'High nitrogen requirement for optimal yield',
@@ -25,6 +26,7 @@ CROP_INFO = {
         'temperature': '18-27°C',
         'rainfall': '60-110 cm',
         'ph': '5.5-7.5',
+        'fertilizer': 'NPK 120:60:40 kg/ha',
         'insights': [
             'Responds well to nitrogen fertilizers',
             'Requires warm weather and frost-free period',
@@ -38,6 +40,7 @@ CROP_INFO = {
         'temperature': '15-25°C',
         'rainfall': '60-90 cm',
         'ph': '6.0-8.0',
+        'fertilizer': 'DAP 100 kg/ha + Rhizobium culture',
         'insights': [
             'Drought-resistant crop',
             'Fixes atmospheric nitrogen',
@@ -51,6 +54,7 @@ CROP_INFO = {
         'temperature': '15-25°C',
         'rainfall': '60-120 cm',
         'ph': '6.0-7.5',
+        'fertilizer': 'NPK 40:60:20 kg/ha',
         'insights': [
             'Requires moderate temperature',
             'Sensitive to waterlogging',
@@ -64,6 +68,7 @@ CROP_INFO = {
         'temperature': '20-30°C',
         'rainfall': '60-140 cm',
         'ph': '6.0-7.5',
+        'fertilizer': 'DAP 100 kg/ha + Sulfur',
         'insights': [
             'Drought-tolerant crop',
             'Deep root system',
@@ -77,6 +82,7 @@ CROP_INFO = {
         'temperature': '25-35°C',
         'rainfall': '50-75 cm',
         'ph': '6.5-7.5',
+        'fertilizer': 'SSP 200 kg/ha',
         'insights': [
             'Drought-resistant',
             'Short duration crop',
@@ -90,6 +96,7 @@ CROP_INFO = {
         'temperature': '25-35°C',
         'rainfall': '60-90 cm',
         'ph': '6.2-7.2',
+        'fertilizer': 'DAP 100 kg/ha',
         'insights': [
             'Short duration crop',
             'Drought tolerant',
@@ -103,6 +110,7 @@ CROP_INFO = {
         'temperature': '25-35°C',
         'rainfall': '60-75 cm',
         'ph': '6.5-7.5',
+        'fertilizer': 'DAP 100 kg/ha',
         'insights': [
             'Short duration pulse crop',
             'Improves soil fertility',
@@ -116,6 +124,7 @@ CROP_INFO = {
         'temperature': '15-25°C',
         'rainfall': '40-50 cm',
         'ph': '6.0-7.5',
+        'fertilizer': 'NPK 20:40:20 kg/ha',
         'insights': [
             'Cool season crop',
             'Drought tolerant',
@@ -129,6 +138,7 @@ CROP_INFO = {
         'temperature': '25-35°C',
         'rainfall': '50-75 cm',
         'ph': '5.5-7.0',
+        'fertilizer': 'Farmyard Manure + NPK 600:250:250 g/tree',
         'insights': [
             'Drought resistant fruit tree',
             'Requires hot, dry climate',
@@ -142,6 +152,7 @@ CROP_INFO = {
         'temperature': '20-35°C',
         'rainfall': '150-200 cm',
         'ph': '6.0-7.5',
+        'fertilizer': 'Nitrogen 200g, Phosphorus 60g, Potassium 300g per plant',
         'insights': [
             'Requires high humidity',
             'Needs good drainage',
@@ -155,6 +166,7 @@ CROP_INFO = {
         'temperature': '24-30°C',
         'rainfall': '75-250 cm',
         'ph': '5.5-7.5',
+        'fertilizer': 'NPK 1:1:1 ratio + Micronutrients',
         'insights': [
             'Tropical fruit tree',
             'Sensitive to frost',
@@ -168,6 +180,7 @@ CROP_INFO = {
         'temperature': '15-35°C',
         'rainfall': '50-150 cm',
         'ph': '6.5-7.5',
+        'fertilizer': 'Potash-rich fertilizers + Organic manure',
         'insights': [
             'Requires pruning',
             'Needs support system',
@@ -181,6 +194,7 @@ CROP_INFO = {
         'temperature': '25-35°C',
         'rainfall': '50-75 cm',
         'ph': '6.0-7.0',
+        'fertilizer': 'NPK 10:10:10 @ 500kg/ha',
         'insights': [
             'Requires warm temperature',
             'Needs plenty of space',
@@ -194,6 +208,7 @@ CROP_INFO = {
         'temperature': '25-35°C',
         'rainfall': '50-75 cm',
         'ph': '6.0-7.0',
+        'fertilizer': 'NPK 80:40:40 kg/ha',
         'insights': [
             'Warm season crop',
             'Requires good drainage',
@@ -207,6 +222,7 @@ CROP_INFO = {
         'temperature': '15-25°C',
         'rainfall': '100-125 cm',
         'ph': '6.0-6.5',
+        'fertilizer': 'Nitrogen 700g, Phosphorus 350g, Potassium 700g per tree',
         'insights': [
             'Requires chilling hours',
             'Temperate fruit tree',
@@ -220,6 +236,7 @@ CROP_INFO = {
         'temperature': '20-30°C',
         'rainfall': '100-120 cm',
         'ph': '6.0-7.5',
+        'fertilizer': 'Ammonium Sulfate + SSP + MOP',
         'insights': [
             'Subtropical fruit tree',
             'Sensitive to frost',
@@ -233,6 +250,7 @@ CROP_INFO = {
         'temperature': '25-30°C',
         'rainfall': '150-200 cm',
         'ph': '6.0-6.5',
+        'fertilizer': 'NPK 250:250:500 g/plant/year',
         'insights': [
             'Fast-growing tropical tree',
             'Sensitive to waterlogging',
@@ -246,6 +264,7 @@ CROP_INFO = {
         'temperature': '27-32°C',
         'rainfall': '150-250 cm',
         'ph': '5.0-8.0',
+        'fertilizer': 'NPK 500:320:1200 g/palm/year',
         'insights': [
             'Coastal tropical tree',
             'Requires high humidity',
@@ -259,6 +278,7 @@ CROP_INFO = {
         'temperature': '21-30°C',
         'rainfall': '50-100 cm',
         'ph': '6.0-8.0',
+        'fertilizer': 'NPK 100:50:50 kg/ha',
         'insights': [
             'Requires long frost-free period',
             'Sensitive to waterlogging',
@@ -272,6 +292,7 @@ CROP_INFO = {
         'temperature': '24-35°C',
         'rainfall': '150-250 cm',
         'ph': '6.0-7.5',
+        'fertilizer': 'NPK 60:30:30 kg/ha',
         'insights': [
             'Requires high rainfall',
             'Needs standing water initially',
@@ -285,6 +306,7 @@ CROP_INFO = {
         'temperature': '15-28°C',
         'rainfall': '150-250 cm',
         'ph': '6.0-6.5',
+        'fertilizer': 'NPK 160:120:160 kg/ha',
         'insights': [
             'Requires shade in early growth',
             'Sensitive to frost and strong winds',
@@ -294,7 +316,41 @@ CROP_INFO = {
     }
 }
 
-# Updated crop label mapping - Double check this matches your model training
+# Plant Disease Knowledge Base
+DISEASE_INFO = {
+    'Apple Scab': {
+        'name': 'Apple Scab',
+        'symptoms': 'Dark, olive-colored velvety spots on leaves and fruit. Leaves may turn yellow and drop early.',
+        'treatment': 'Apply protective fungicides (Captan, Mancozeb) before rain events. Remove fallen leaves in autumn.',
+        'prevention': 'Plant resistant varieties. Ensure good air circulation by proper pruning.'
+    },
+    'Tomato Late Blight': {
+        'name': 'Tomato Late Blight',
+        'symptoms': 'Dark, water-soaked spots on leaves that rapidly enlarge. White fungal growth on underside of leaves in humid weather.',
+        'treatment': 'Use copper-based fungicides. Remove and destroy infected plants immediately.',
+        'prevention': 'Avoid overhead watering. Space plants for good ventilation.'
+    },
+    'Rice Blast': {
+        'name': 'Rice Blast',
+        'symptoms': 'Spindle-shaped spots with gray centers on leaves. Infection at the neck causes the panicle to fall over.',
+        'treatment': 'Apply systemic fungicides like Tricyclazole. Avoid excessive nitrogen application.',
+        'prevention': 'Use resistant cultivars. Maintain proper water levels in the field.'
+    },
+    'Corn Rust': {
+        'name': 'Corn Rust',
+        'symptoms': 'Small, orangish-brown pustules on both leaf surfaces. Leaves may yellow and dry up.',
+        'treatment': 'Foliar fungicides (Strobilurins or Triazoles) if infection is severe.',
+        'prevention': 'Plant rust-resistant hybrids. Early planting can help avoid peak rust season.'
+    },
+    'Potato Early Blight': {
+        'name': 'Potato Early Blight',
+        'symptoms': 'Small, dark spots with concentric rings (target-like appearance) on older leaves.',
+        'treatment': 'Fungicide sprays (Chlorothalonil). Maintain plant vigor with proper fertilization.',
+        'prevention': 'Crop rotation (avoid planting peppers or tomatoes nearby). Remove crop debris.'
+    }
+}
+
+# Updated crop label mapping
 CROP_LABELS = {
     0: 'Rice', 1: 'Maize', 2: 'Chickpea', 3: 'Kidneybeans', 4: 'Pigeonpeas',
     5: 'Mothbeans', 6: 'Mungbean', 7: 'Blackgram', 8: 'Lentil', 9: 'Pomegranate',
@@ -303,14 +359,20 @@ CROP_LABELS = {
     20: 'Jute', 21: 'Coffee'
 }
 
-# Alternative label mapping (try this if above doesn't work)
-CROP_LABELS_ALTERNATIVE = {
-    1: 'Rice', 2: 'Maize', 3: 'Chickpea', 4: 'Kidneybeans', 5: 'Pigeonpeas',
-    6: 'Mothbeans', 7: 'Mungbean', 8: 'Blackgram', 9: 'Lentil', 10: 'Pomegranate',
-    11: 'Banana', 12: 'Mango', 13: 'Grapes', 14: 'Watermelon', 15: 'Muskmelon',
-    16: 'Apple', 17: 'Orange', 18: 'Papaya', 19: 'Coconut', 20: 'Cotton',
-    21: 'Jute', 22: 'Coffee'
-}
+# Disease Prediction Logic (Simulation)
+class MockDiseaseModel:
+    def predict(self, file_path):
+        import random
+        diseases = list(DISEASE_INFO.keys())
+        filename = file_path.lower()
+        if 'apple' in filename: return 'Apple Scab'
+        if 'tomato' in filename: return 'Tomato Late Blight'
+        if 'rice' in filename: return 'Rice Blast'
+        if 'corn' in filename: return 'Corn Rust'
+        if 'potato' in filename: return 'Potato Early Blight'
+        return random.choice(diseases)
+
+disease_model = MockDiseaseModel()
 
 try:
     standard_scaler = pickle.load(open('scalerstand.pkl', 'rb'))
@@ -419,16 +481,13 @@ def predict():
             predicted_int = int(predicted_value)
             print(f"🔢 Predicted integer: {predicted_int}")
             
-            # Try different label mappings
+            # Try label mapping
             if predicted_int in CROP_LABELS:
                 crop_name = CROP_LABELS[predicted_int]
                 print(f"✅ Found in CROP_LABELS: {crop_name}")
-            elif predicted_int in CROP_LABELS_ALTERNATIVE:
-                crop_name = CROP_LABELS_ALTERNATIVE[predicted_int]
-                print(f"✅ Found in CROP_LABELS_ALTERNATIVE: {crop_name}")
             else:
                 crop_name = f"Unknown Code: {predicted_int}"
-                print(f"❌ Not found in any label mapping")
+                print(f"❌ Not found in label mapping")
         else:
             crop_name = str(predicted_value)
             print(f"🔢 String prediction: {crop_name}")
@@ -502,6 +561,32 @@ def debug():
     <h2>Model Info:</h2>
     <pre>Type: {type(model)}</pre>
     """
+
+@app.route('/disease')
+def disease_page():
+    return render_template('disease.html', disease_data=None)
+
+@app.route('/disease-predict', methods=['POST'])
+def disease_predict():
+    if 'file' not in request.files:
+        return render_template('disease.html', error='No file uploaded')
+    
+    file = request.files['file']
+    if file.filename == '':
+        return render_template('disease.html', error='No file selected')
+    
+    if file:
+        # In a real app, we'd save the file and run it through a model
+        # For now, we'll simulate the prediction
+        temp_path = os.path.join('static', 'uploads', file.filename)
+        os.makedirs(os.path.dirname(temp_path), exist_ok=True)
+        file.save(temp_path)
+        
+        disease_name = disease_model.predict(temp_path)
+        disease_data = DISEASE_INFO.get(disease_name)
+        disease_data['image_url'] = f'/static/uploads/{file.filename}'
+        
+        return render_template('disease.html', disease_data=disease_data)
 
 if __name__ == '__main__':
        port = int(os.environ.get('PORT', 5000))

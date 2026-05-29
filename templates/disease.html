@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection - AgroVision</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo" onclick="window.location.href='/'">AgroVision</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/prediction">Recommendation</a></li>
+            <li><a href="/disease">Disease Detection</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="section">
+        <div class="result-container glass" style="max-width: 600px;">
+            <div class="result-header">
+                <i class="fas fa-microscope" style="font-size: 3rem; color: var(--primary-light); margin-bottom: 1rem;"></i>
+                <h2>Plant Disease Detection</h2>
+                <p>Upload a clear photo of the affected plant part (leaf, stem, or fruit) for instant AI analysis.</p>
+            </div>
+
+            {% if error %}
+            <div style="background: rgba(255, 0, 0, 0.1); color: #ff5252; padding: 1rem; border-radius: 10px; margin-bottom: 2rem; border: 1px solid rgba(255,0,0,0.2);">
+                <i class="fas fa-exclamation-circle"></i> {{ error }}
+            </div>
+            {% endif %}
+
+            {% if not disease_data %}
+            <form action="/disease-predict" method="POST" enctype="multipart/form-data">
+                <div class="form-group" style="border: 2px dashed var(--glass-border); padding: 3rem; border-radius: 20px; text-align: center; cursor: pointer; transition: var(--transition);" id="drop-zone">
+                    <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+                    <p id="file-name">Click or drag image here</p>
+                    <input type="file" name="file" id="file-input" style="display: none;" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Analyze Plant</button>
+            </form>
+            {% else %}
+            <div class="prediction-result" style="text-align: left;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src="{{ disease_data.image_url }}" alt="Uploaded Image" style="max-width: 100%; border-radius: 15px; box-shadow: var(--shadow); border: 2px solid var(--primary-light);">
+                </div>
+                
+                <div class="crop-badge" style="display: block; text-align: center; font-size: 1.5rem; margin-bottom: 2rem;">
+                    Diagnosis: {{ disease_data.name }}
+                </div>
+
+                <div class="insight-item" style="margin-bottom: 1rem;">
+                    <div class="insight-label"><i class="fas fa-info-circle"></i> Symptoms</div>
+                    <div class="insight-value" style="font-weight: 400; font-size: 1rem;">{{ disease_data.symptoms }}</div>
+                </div>
+
+                <div class="insight-item" style="margin-bottom: 1rem;">
+                    <div class="insight-label"><i class="fas fa-medkit"></i> Recommended Treatment</div>
+                    <div class="insight-value" style="font-weight: 400; font-size: 1rem;">{{ disease_data.treatment }}</div>
+                </div>
+
+                <div class="insight-item" style="margin-bottom: 2rem;">
+                    <div class="insight-label"><i class="fas fa-shield-alt"></i> Prevention Tips</div>
+                    <div class="insight-value" style="font-weight: 400; font-size: 1rem;">{{ disease_data.prevention }}</div>
+                </div>
+
+                <a href="/disease" class="btn glass glass-hover" style="width: 100%; text-align: center; color: white; text-decoration: none;">Scan Another Plant</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const fileName = document.getElementById('file-name');
+
+        if (dropZone) {
+            dropZone.onclick = () => fileInput.click();
+            fileInput.onchange = (e) => {
+                if (e.target.files.length > 0) {
+                    fileName.textContent = e.target.files[0].name;
+                    dropZone.style.borderColor = 'var(--primary-light)';
+                    dropZone.style.background = 'rgba(76, 175, 80, 0.05)';
+                }
+            };
+        }
+    </script>
+</body>
+</html>
